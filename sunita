@@ -31,4 +31,15 @@ public:
     }
 };
 
+int main() {
+    BankAccount account;
+
+    account.createAccount("Alice", 1000);
+
+    account.deposit(500); 
+    account.withdraw(200);  
+    account.display();
+
+    return 0;
+}
 
