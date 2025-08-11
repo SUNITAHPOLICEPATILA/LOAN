@@ -5,4 +5,41 @@ class BankAccount {
 private:
     string accountHolder;
     float balance;
+public:
+    void createAccount(string name, float initialBalance) {
+        accountHolder = name;
+        balance = initialBalance;
+    }
+
+    void deposit(float amount) {
+        balance += amount;
+        cout << "Deposited: $" << amount << endl;
+    }
+    void withdraw(float amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            cout << "Withdrew: $" << amount << endl;
+        } else {
+            cout << "Insufficient balance to withdraw $" << amount << endl;
+        }
+    }
+
+
+    void display() {
+        cout << "Account Holder: " << accountHolder << endl;
+        cout << "Balance: $" << balance << endl;
+    }
+};
+
+int main() {
+    BankAccount account;
+
+    account.createAccount("Alice", 1000);
+
+    account.deposit(500); 
+    account.withdraw(200);  
+    account.display();
+
+    return 0;
+}
 
