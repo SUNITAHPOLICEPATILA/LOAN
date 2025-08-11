@@ -15,4 +15,20 @@ public:
         balance += amount;
         cout << "Deposited: $" << amount << endl;
     }
+    void withdraw(float amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            cout << "Withdrew: $" << amount << endl;
+        } else {
+            cout << "Insufficient balance to withdraw $" << amount << endl;
+        }
+    }
+
+
+    void display() {
+        cout << "Account Holder: " << accountHolder << endl;
+        cout << "Balance: $" << balance << endl;
+    }
+};
+
 
