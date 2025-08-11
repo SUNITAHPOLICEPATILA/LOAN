@@ -5,4 +5,14 @@ class BankAccount {
 private:
     string accountHolder;
     float balance;
+public:
+    void createAccount(string name, float initialBalance) {
+        accountHolder = name;
+        balance = initialBalance;
+    }
+
+    void deposit(float amount) {
+        balance += amount;
+        cout << "Deposited: $" << amount << endl;
+    }
 
